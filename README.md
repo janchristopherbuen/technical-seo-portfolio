@@ -29,4 +29,4 @@ See project folders below.
 ## Contact
 GitHub: https://github.com/janchristopherbuen
 LinkedIn: (your profile)
-Email: (your email)
+Email: buenjanchristopher@gmail.com

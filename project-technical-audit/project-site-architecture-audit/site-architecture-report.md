@@ -14,9 +14,9 @@ Tools used:
 
 ![Site Structure](./screenshots/site-structure.png)
 
-## Analysis
+## Findings
 
-The crawl identified a hierarchical website structure organized into several main directories.
+The crawl identified a hierarchical structure organized into several directories.
 
 | Directory   | URLs |
 | ----------- | ---- |
@@ -25,8 +25,11 @@ The crawl identified a hierarchical website structure organized into several mai
 | /media/     | 215  |
 | /static/    | 7    |
 
-The site organizes content using category directories that contain product pages.
-This hierarchical organization helps search engines understand the relationship between pages.
+### Analysis
+
+The website follows a **clear category-based structure** where product pages are grouped within category directories. This type of structure helps search engines understand page relationships and improves crawl efficiency.
+
+The `/catalogue/` directory contains the majority of the site's content, indicating that product listings are the primary focus of the website.
 
 ---
 
@@ -34,18 +37,21 @@ This hierarchical organization helps search engines understand the relationship 
 
 ![Crawl Tree Graph](./screenshots/crawl-tree-graph.png)
 
-## Analysis
+## Findings
 
-The crawl tree visualization shows the internal linking hierarchy of the website.
+The crawl tree visualization illustrates the internal linking hierarchy.
 
 Structure observed:
 
 Homepage
-→ Category Pages
-→ Product Pages
+→ Category pages
+→ Product pages
 
-Category pages act as hubs that distribute links to product pages.
-This architecture supports efficient crawling and helps search engines discover deeper pages.
+### Analysis
+
+The homepage links to multiple category pages, which then distribute links to product pages. This structure creates a logical navigation path that helps crawlers efficiently discover deeper content.
+
+Category pages function as **internal linking hubs**, distributing authority to product pages through internal links.
 
 ---
 
@@ -62,26 +68,29 @@ This architecture supports efficient crawling and helps search engines discover 
 | Level 2     | 398   |
 | Level 3     | 0     |
 
-## Analysis
+### Analysis
 
-Most pages exist at **crawl depth level 2**, meaning they are accessible within two clicks from the homepage.
+The majority of pages exist at **crawl depth level 2**, meaning they are accessible within two clicks from the homepage.
 
-Best practice recommendations suggest keeping important pages within three clicks from the homepage.
-The current structure meets this guideline and supports efficient crawling.
+Best practice recommendations for site architecture suggest that important pages should remain within **three clicks from the homepage**.
+
+This website meets that guideline and demonstrates an efficient crawl path.
 
 ---
 
 # 4. Internal Linking Observations
 
-The site uses category pages to distribute internal links to product pages.
+Internal linking primarily flows from category pages to product pages.
 
-Benefits of this structure include:
+Benefits of this architecture include:
 
-* efficient crawl paths for search engines
-* logical site hierarchy
-* improved discoverability of deeper pages
+* efficient distribution of internal link equity
+* improved crawl efficiency
+* logical content organization
 
-However, deeper pages may receive fewer internal links, which could impact crawl frequency.
+However, deeper product pages may receive fewer internal links compared to category pages.
+
+Strengthening internal links to high-value pages can further improve discoverability.
 
 ---
 
@@ -89,8 +98,8 @@ However, deeper pages may receive fewer internal links, which could impact crawl
 
 1. Maintain the current hierarchical site architecture.
 2. Ensure important pages remain within three clicks from the homepage.
-3. Strengthen internal linking to deeper content when possible.
-4. Monitor crawl depth during future technical SEO audits.
+3. Strengthen internal linking to deeper pages where appropriate.
+4. Regularly monitor crawl depth to ensure content remains accessible to search engines.
 
 ---
 
@@ -107,4 +116,4 @@ However, deeper pages may receive fewer internal links, which could impact crawl
 
 # Conclusion
 
-The website demonstrates a clear hierarchical architecture where most pages are accessible within two crawl levels from the homepage. This structure supports efficient crawling and helps search engines discover content effectively.
+The website demonstrates a clear hierarchical architecture with most pages accessible within two crawl levels from the homepage. This structure supports efficient crawling and allows search engines to discover and index content effectively.

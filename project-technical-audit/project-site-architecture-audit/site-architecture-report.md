@@ -6,7 +6,7 @@ Audit Date: March 2026
 Tools used:
 
 * Screaming Frog SEO Spider
-* Microsoft Excel
+* Google Sheets
 
 ---
 

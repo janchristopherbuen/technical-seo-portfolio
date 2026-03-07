@@ -1,11 +1,11 @@
 # Technical SEO Portfolio
 
 Entry-level Technical SEO specialist focused on website audits,
-performance optimization, and crawlability improvements.
+crawlability analysis, and performance optimization.
 
 ## Skills
 - Technical SEO audits
-- Crawlability & indexing
+- Crawlability and indexing
 - Core Web Vitals optimization
 - Internal linking analysis
 - Structured data implementation
@@ -15,3 +15,18 @@ performance optimization, and crawlability improvements.
 - Google Search Console
 - PageSpeed Insights
 - Lighthouse
+- Chrome DevTools
+
+## Case Studies
+See project folders below.
+
+## Services
+- Technical SEO audits
+- Core Web Vitals optimization
+- Crawlability analysis
+- Internal linking optimization
+
+## Contact
+GitHub: https://github.com/janchristopherbuen
+LinkedIn: (your profile)
+Email: (your email)

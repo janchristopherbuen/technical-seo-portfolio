@@ -5,58 +5,62 @@
 Books to Scrape (Demo Website)
 https://books.toscrape.com
 
-## Objective
+---
 
-The goal of this audit is to evaluate whether search engines can properly **crawl and index the website**. The audit focuses on critical technical SEO elements that influence crawlability and indexability.
+# Objective
+
+The purpose of this audit is to evaluate whether search engines can properly **crawl and index website pages**. The analysis focuses on critical technical SEO signals that affect indexability.
+
+The audit includes verification of:
+
+* robots.txt configuration
+* XML sitemap availability
+* meta robots directives
+* canonical tag implementation
+* HTTP response codes
 
 ---
 
 # Tools Used
 
 * Google Chrome Developer Tools
-* Network Panel (HTTP Status Validation)
-* Manual URL Inspection
-* Spreadsheet Documentation
+* Chrome Network Panel
+* Manual URL inspection
+* Spreadsheet documentation
 
 ---
 
-# Audit Scope
-
-The audit analyzed the following SEO factors:
-
-* robots.txt availability
-* XML sitemap presence
-* Meta robots directives
-* Canonical tag implementation
-* HTTP status codes
-
----
-
-# Robots.txt Analysis
+# 1. Robots.txt Analysis
 
 **URL Tested**
 
+```
 https://books.toscrape.com/robots.txt
+```
 
-**Result**
+### Screenshot
 
-Status Code: 404 (Not Found)
+![Robots.txt 404](screenshots/robots-404.png)
+
+### Result
+
+Status Code: **404 Not Found**
 
 ### Analysis
 
-The website does not provide a robots.txt file. Without this file, search engine crawlers are not restricted from accessing any part of the site.
+The website does not provide a robots.txt file. This means search engine crawlers are not restricted from accessing any part of the website.
 
 ### Impact
 
 * Crawlers can access all URLs
 * Crawl budget cannot be optimized
-* No crawler control for sensitive directories
+* No crawler control for backend or unnecessary pages
 
 ### Recommendation
 
-Create a robots.txt file to control crawler access.
+Create a robots.txt file to manage crawler access.
 
-Example:
+Example configuration:
 
 ```
 User-agent: *
@@ -68,7 +72,7 @@ Sitemap: https://domain.com/sitemap.xml
 
 ---
 
-# XML Sitemap Analysis
+# 2. XML Sitemap Analysis
 
 **URLs Tested**
 
@@ -78,22 +82,29 @@ Sitemap: https://domain.com/sitemap.xml
 /sitemap_index.xml
 ```
 
-**Result**
+### Screenshot
 
-All URLs returned **404 Not Found**
+![Sitemap 404](screenshots/sitemap-404.png)
+
+### Result
+
+All tested URLs returned **404 Not Found**.
 
 ### Analysis
 
-The website does not provide an XML sitemap. Sitemaps help search engines discover important pages more efficiently.
+The website does not provide an XML sitemap. Sitemaps help search engines efficiently discover and crawl indexable pages.
 
 ### Impact
 
 * Slower discovery of new pages
 * Reduced crawl efficiency
+* Important pages may be discovered later
 
 ### Recommendation
 
-Create a sitemap file:
+Create an XML sitemap.
+
+Example location:
 
 ```
 https://domain.com/sitemap.xml
@@ -111,13 +122,19 @@ Example structure:
 
 ---
 
-# Meta Robots Analysis
+# 3. Meta Robots Tag Analysis
 
 Page inspected:
 
+```
 https://books.toscrape.com/
+```
 
-Meta robots tag detected:
+### Screenshot
+
+![Meta Robots Tag](screenshots/meta-robots.png)
+
+### Tag Detected
 
 ```
 <meta name="robots" content="NOARCHIVE,NOCACHE">
@@ -125,35 +142,30 @@ Meta robots tag detected:
 
 ### Interpretation
 
-| Directive | Meaning                        |
-| --------- | ------------------------------ |
-| NOARCHIVE | Prevents cached page display   |
-| NOCACHE   | Prevents cached result display |
+| Directive | Meaning                                            |
+| --------- | -------------------------------------------------- |
+| NOARCHIVE | Prevents search engines from storing cached copies |
+| NOCACHE   | Prevents cached result display                     |
 
-Important:
+Important observation:
 
-The tag **does not include "noindex"**, meaning the page remains **indexable**.
+The tag **does not include `noindex`**, meaning the page **remains indexable**.
 
 ---
 
-# Canonical Tag Analysis
+# 4. Canonical Tag Analysis
 
-Search performed for:
+### Screenshot
 
-```
-<link rel="canonical">
-```
+![Missing Canonical Tag](screenshots/no-canonical-tag.png)
 
-**Result**
+### Result
 
-No canonical tag found.
+No canonical tag detected.
 
-### Impact
+### Analysis
 
-Missing canonical tags may cause:
-
-* Duplicate content signals
-* Split ranking signals across similar URLs
+Canonical tags help search engines identify the preferred version of a page. Missing canonical tags may cause duplicate content signals if multiple URLs reference the same content.
 
 ### Recommendation
 
@@ -167,19 +179,25 @@ Example:
 
 ---
 
-# HTTP Status Code Validation
+# 5. HTTP Status Code Validation
 
 Page tested:
 
-https://books.toscrape.com/catalogue/tipping-the-velvet_999/index.html
+```
+/catalogue/tipping-the-velvet_999/index.html
+```
 
-Result:
+### Screenshot
 
-Status Code: **304 (Not Modified)**
+![HTTP Status 304](screenshots/http-status-304.png)
+
+### Result
+
+Status Code: **304 Not Modified**
 
 ### Interpretation
 
-This indicates the browser used a cached version of the page. A 304 response is normal and does not negatively affect crawlability or indexability.
+A 304 response indicates that the browser used a cached version of the page. This behavior is normal and does not negatively affect crawlability or indexability.
 
 ---
 
@@ -198,37 +216,7 @@ This indicates the browser used a cached version of the page. A 304 response is 
 
 # Indexability Summary
 
-| URL          | Crawlable | Indexable | Issue                 |
-| ------------ | --------- | --------- | --------------------- |
-| Homepage     | Yes       | Yes       | Missing canonical tag |
-| robots.txt   | Yes       | N/A       | File missing          |
-| sitemap.xml  | Yes       | N/A       | Sitemap missing       |
-| Product page | Yes       | Yes       | Missing canonical tag |
-
----
-
-# Key Findings
-
-1. The website does not provide a **robots.txt file**.
-2. No **XML sitemap** is available for search engines.
-3. Pages lack **canonical tags**, which may create duplicate content risks.
-4. Pages return valid **HTTP status codes (200 / 304)**.
-
----
-
-# SEO Recommendations
-
-| Issue                 | Recommendation                                    |
-| --------------------- | ------------------------------------------------- |
-| Missing robots.txt    | Create robots.txt file to control crawler access  |
-| Missing XML sitemap   | Generate sitemap.xml and submit to search engines |
-| Missing canonical tag | Add self-referencing canonical tags to pages      |
-
-Example canonical implementation:
-
-```
-<link rel="canonical" href="https://books.toscrape.com/page">
-```
-
-
-
+| URL        | Crawlable | Indexable | Issue                 |
+| ---------- | --------- | --------- | --------------------- |
+| Homepage   | Yes       | Yes       | Missing canonical tag |
+| robots.txt | Yes       |           |                       |

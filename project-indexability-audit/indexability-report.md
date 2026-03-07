@@ -1,4 +1,4 @@
-# Project 3 — Indexability & Crawlability Audit
+# Indexability & Crawlability Audit
 
 ## Website Audited
 

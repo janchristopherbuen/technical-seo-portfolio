@@ -1,160 +1,211 @@
-Technical SEO Audit
+# Technical SEO Audit
 
 Website: https://books.toscrape.com
-
 Audit Date: March 7, 2026
 
 Tools used:
 
-Screaming Frog SEO Spider
+* Screaming Frog SEO Spider
+* Google PageSpeed Insights
 
-Google PageSpeed Insights
+---
 
-1. Crawl Overview
+# 1. Crawl Overview
 
-A full site crawl was conducted to evaluate crawlability, indexability, and technical accessibility.
+A technical crawl was conducted to evaluate the site structure, crawlability, and indexability.
 
-Crawl Summary
-Metric	Value
-Total URLs encountered	500
-Total URLs crawled	500
-Internal URLs	499
-External URLs	1
-Internal indexable URLs	499
-Internal non-indexable URLs	0
-URLs blocked by robots.txt	0
-Analysis
+![Crawl Overview](./screenshots/crawl-overview.png)
 
-All discovered internal URLs are accessible to search engine crawlers and appear indexable. No restrictions were detected within robots.txt.
+## Crawl Summary
 
-The crawl reached the 500-URL limit of the Screaming Frog free version, indicating that the site likely contains additional URLs not included in this analysis.
+| Metric                      | Value |
+| --------------------------- | ----- |
+| Total URLs encountered      | 500   |
+| Total URLs crawled          | 500   |
+| Internal URLs               | 499   |
+| External URLs               | 1     |
+| Internal indexable URLs     | 499   |
+| Internal non-indexable URLs | 0     |
+| URLs blocked by robots.txt  | 0     |
 
-Recommendation
+### Analysis
 
-Perform a full crawl without URL limits to analyze the complete site architecture and internal linking structure.
+All discovered pages returned indexable responses and were accessible to crawlers.
+No pages were blocked by robots.txt.
 
-2. Page Title Analysis
+The crawl reached the **500-URL limit of the Screaming Frog free version**, meaning additional URLs may exist beyond the analyzed dataset.
 
-Page titles are a primary ranking factor and help search engines understand page content.
+### Recommendation
 
-Title Tag Summary
-Issue	URLs
-Duplicate titles	15
-Titles over 60 characters	100
-Titles exceeding pixel width	99
-Missing titles	0
-Analysis
+Run a full crawl without URL limits to evaluate the entire site structure and internal linking architecture.
 
-Several pages contain duplicate titles or titles that exceed recommended character limits. Long titles may be truncated in search engine results.
+---
 
-Recommendation
+# 2. Page Title Analysis
 
-Improve title optimization by:
+Page titles are critical on-page SEO elements used by search engines to understand page topics.
 
-keeping titles under 60 characters
+![Page Titles](./screenshots/page-titles.png)
 
-ensuring each page has a unique title
+## Title Tag Summary
 
-including relevant keywords
+| Issue                        | URLs |
+| ---------------------------- | ---- |
+| Duplicate titles             | 15   |
+| Titles over 60 characters    | 100  |
+| Titles exceeding pixel width | 99   |
+| Missing titles               | 0    |
 
-maintaining consistent formatting
+### Analysis
 
-3. Meta Description Analysis
+Several pages contain duplicate or overly long titles. Titles that exceed recommended lengths may be truncated in search results.
 
-Meta descriptions influence how pages appear in search results and affect click-through rates.
+### Recommendation
 
-Meta Description Summary
-Issue	URLs	Percentage
-Total pages analyzed	277	100%
-Missing meta descriptions	61	22.02%
-Duplicate descriptions	0	0%
-Analysis
+Improve title tags by:
 
-Approximately 22% of pages are missing meta descriptions, which may reduce control over how search engines display snippets in SERPs.
+* keeping titles under **60 characters**
+* ensuring each page has a **unique title**
+* including relevant keywords
+* maintaining consistent formatting
 
-Recommendation
+---
+
+# 3. Meta Description Analysis
+
+Meta descriptions influence search result snippets and click-through rates.
+
+![Meta Descriptions](./screenshots/meta-descriptions.png)
+
+## Meta Description Summary
+
+| Issue                     | URLs | Percentage |
+| ------------------------- | ---- | ---------- |
+| Total pages analyzed      | 277  | 100%       |
+| Missing meta descriptions | 61   | 22.02%     |
+| Duplicate descriptions    | 0    | 0%         |
+
+### Analysis
+
+Approximately **22% of pages lack meta descriptions**, which may cause search engines to automatically generate snippets.
+
+### Recommendation
 
 Improve metadata coverage by:
 
-adding descriptions to missing pages
+* writing descriptions for missing pages
+* maintaining **150–160 character descriptions**
+* including relevant keywords naturally
+* aligning descriptions with page intent
 
-maintaining 150–160 character descriptions
+---
 
-including relevant keywords naturally
+# 4. Response Code Analysis
 
-aligning descriptions with page intent
+HTTP response codes indicate whether pages are accessible to users and search engines.
 
-4. Response Code Analysis
+![Response Codes](./screenshots/response-codes.png)
 
-Response codes determine whether search engines can successfully access website content.
+## Response Code Summary
 
-Response Code Summary
-Status Code	URLs	Interpretation
-2xx (Success)	500	Pages load correctly
-3xx (Redirect)	0	No redirects detected
-4xx (Client Errors)	0	No broken pages detected
-5xx (Server Errors)	0	No server failures detected
-Analysis
+| Status Code         | URLs | Interpretation            |
+| ------------------- | ---- | ------------------------- |
+| 2xx (Success)       | 500  | Pages load correctly      |
+| 3xx (Redirect)      | 0    | No redirects detected     |
+| 4xx (Client Errors) | 0    | No broken links detected  |
+| 5xx (Server Errors) | 0    | No server errors detected |
 
-All crawled URLs returned HTTP 200 success responses, indicating a stable site structure with no crawl-blocking errors.
+### Analysis
 
-Recommendation
+All crawled pages returned **HTTP 200 success responses**, indicating stable site accessibility.
 
-Continue monitoring status codes during routine SEO audits to ensure site stability.
+### Recommendation
 
-5. Page Performance Analysis
+Continue monitoring response codes during regular SEO audits to prevent broken links or server errors.
 
-Performance analysis was conducted using Google PageSpeed Insights.
+---
 
-Performance Scores
-Category	Score
-Performance	99
-Accessibility	85
-Best Practices	73
-SEO	91
-Performance Metrics
-Metric	Result
-First Contentful Paint	1.4 s
-Largest Contentful Paint	1.7 s
-Total Blocking Time	0 ms
-Speed Index	2.4 s
-Cumulative Layout Shift	0
-Analysis
+# 5. Page Performance Analysis
 
-The site demonstrates excellent performance, with a Lighthouse score of 99 and minimal blocking resources.
+Performance was evaluated using Google PageSpeed Insights.
 
-Recommendation
+![Performance Score](./screenshots/pagespeed-performance.png)
 
-Maintain performance by:
+## Performance Scores
 
-optimizing image formats
+| Category       | Score |
+| -------------- | ----- |
+| Performance    | 99    |
+| Accessibility  | 85    |
+| Best Practices | 73    |
+| SEO            | 91    |
 
-enabling browser caching
+## Performance Metrics
 
-minimizing unused CSS and JavaScript
+| Metric                   | Result |
+| ------------------------ | ------ |
+| First Contentful Paint   | 1.4 s  |
+| Largest Contentful Paint | 1.7 s  |
+| Total Blocking Time      | 0 ms   |
+| Speed Index              | 2.4 s  |
+| Cumulative Layout Shift  | 0      |
 
-6. Core Web Vitals
+### Analysis
 
-Core Web Vitals measure real-world user experience metrics.
+The website demonstrates excellent performance with minimal render-blocking resources.
 
-Core Web Vitals Metrics
-Metric	Value	Status
-Largest Contentful Paint (LCP)	2.4 s	Good
-Interaction to Next Paint (INP)	104 ms	Good
-Cumulative Layout Shift (CLS)	0	Excellent
-Analysis
+### Recommendation
 
-The site passes Core Web Vitals, indicating strong performance and layout stability for users.
+Maintain strong performance by:
 
-Recommendation
+* optimizing images
+* enabling browser caching
+* minimizing unused CSS and JavaScript
 
-Continue monitoring Core Web Vitals through performance tools and Search Console.
+---
 
-7. Technical SEO Summary
-SEO Area	Status
-Crawlability	Good
-Indexability	Good
-Page Titles	Needs improvement
-Meta Descriptions	Needs improvement
-Response Codes	Excellent
-Performance	Excellent
+# 6. Core Web Vitals
+
+Core Web Vitals measure real-world user experience performance.
+
+![Core Web Vitals](./screenshots/core-web-vitals.png)
+
+## Core Web Vitals Metrics
+
+| Metric                          | Value  | Status    |
+| ------------------------------- | ------ | --------- |
+| Largest Contentful Paint (LCP)  | 2.4 s  | Good      |
+| Interaction to Next Paint (INP) | 104 ms | Good      |
+| Cumulative Layout Shift (CLS)   | 0      | Excellent |
+
+### Analysis
+
+The site **passes Core Web Vitals**, indicating a fast and stable user experience.
+
+### Recommendation
+
+Monitor Core Web Vitals regularly using performance monitoring tools.
+
+---
+
+# 7. Technical SEO Summary
+
+| SEO Area          | Status            |
+| ----------------- | ----------------- |
+| Crawlability      | Good              |
+| Indexability      | Good              |
+| Page Titles       | Needs improvement |
+| Meta Descriptions | Needs improvement |
+| Response Codes    | Excellent         |
+| Performance       | Excellent         |
+
+---
+
+# Final Recommendations
+
+1. Perform a full crawl without the 500-URL limitation.
+2. Optimize title tags to remove duplicates and reduce length.
+3. Add meta descriptions to missing pages.
+4. Continue monitoring performance and Core Web Vitals.
+
+---

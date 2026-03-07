@@ -216,7 +216,37 @@ A 304 response indicates that the browser used a cached version of the page. Thi
 
 # Indexability Summary
 
-| URL        | Crawlable | Indexable | Issue                 |
-| ---------- | --------- | --------- | --------------------- |
-| Homepage   | Yes       | Yes       | Missing canonical tag |
-| robots.txt | Yes       |           |                       |
+| URL          | Crawlable | Indexable | Issue                 |
+| ------------ | --------- | --------- | --------------------- |
+| Homepage     | Yes       | Yes       | Missing canonical tag |
+| robots.txt   | Yes       | N/A       | File missing          |
+| sitemap.xml  | Yes       | N/A       | Sitemap missing       |
+| Product page | Yes       | Yes       | Missing canonical tag |
+
+---
+
+# Key Findings
+
+1. The website does not provide a **robots.txt file**, preventing crawler management.
+2. No **XML sitemap exists**, reducing crawl efficiency.
+3. Pages lack **canonical tags**, increasing duplicate content risks.
+4. Pages return valid **HTTP status codes (200 / 304)** and remain accessible.
+
+---
+
+# SEO Recommendations
+
+| Issue                 | Recommendation                                    |
+| --------------------- | ------------------------------------------------- |
+| Missing robots.txt    | Create robots.txt file to control crawler access  |
+| Missing XML sitemap   | Generate sitemap.xml and submit to search engines |
+| Missing canonical tag | Add self-referencing canonical tags               |
+
+Example canonical implementation:
+
+```
+<link rel="canonical" href="https://books.toscrape.com/page">
+```
+
+---
+

@@ -1,4 +1,4 @@
-# Site Architecture & Crawl Depth Analysis
+# Site Architecture Audit
 
 Website: https://books.toscrape.com
 Audit Date: March 2026

@@ -17,9 +17,16 @@ crawlability analysis, and performance optimization.
 - Lighthouse
 - Chrome DevTools
 
-## Case Studies
-See project folders below.
+## Technical SEO Projects
 
+1. **Site Architecture Audit**
+   - Analysis of website hierarchy, internal linking, and crawl depth.
+
+2. **Indexability Audit**
+   - Evaluation of robots.txt rules, meta robots tags, and search engine indexability.
+
+3. **Technical SEO Audit**
+   - Assessment of crawlability, status codes, and technical barriers affecting search engine crawling.
 ## Services
 - Technical SEO audits
 - Core Web Vitals optimization

@@ -1,4 +1,4 @@
-# Indexability & Crawlability Audit
+# Indexability Audit
 
 ## Website Audited
 

@@ -1,38 +1,32 @@
-# Technical SEO Portfolio
-
-Entry-level Technical SEO specialist focused on website audits,
-crawlability analysis, and performance optimization.
-
-## Skills
-- Technical SEO audits
-- Crawlability and indexing
-- Core Web Vitals optimization
-- Internal linking analysis
-- Structured data implementation
-
-## Tools
-- Screaming Frog
-- Google Search Console
-- PageSpeed Insights
-- Lighthouse
-- Chrome DevTools
-
 ## Technical SEO Projects
 
-1. **Site Architecture Audit**
-   - Analysis of website hierarchy, internal linking, and crawl depth.
+### 1. Site Architecture Audit
+Analysis of the website's structure to evaluate page hierarchy, internal linking strategy, and crawl depth. The objective is to ensure that important pages are easily discoverable by search engine crawlers and that link equity flows efficiently across the site.
 
-2. **Indexability Audit**
-   - Evaluation of robots.txt rules, meta robots tags, and search engine indexability.
+**Report:**  
+[View Site Architecture Audit](./seo-audit-report.md#site-architecture-audit)
 
-3. **Technical SEO Audit**
-   - Assessment of crawlability, status codes, and technical barriers affecting search engine crawling.
-## Services
-- Technical SEO audits
-- Core Web Vitals optimization
-- Crawlability analysis
-- Internal linking optimization
+---
 
-## Contact
-GitHub: https://github.com/janchristopherbuen
-Email: buenjanchristopher@gmail.com
+### 2. Indexability Audit
+Evaluation of elements that control whether pages can be indexed by search engines. This includes reviewing `robots.txt`, meta robots directives, and verifying that important pages are accessible to search engine bots.
+
+**Report:**  
+[View Indexability Audit](./seo-audit-report.md#indexability-audit)
+
+---
+
+### 3. Technical SEO Audit
+Assessment of technical factors that influence search engine crawling and site performance. This includes checking HTTP status codes, crawlability, and identifying technical barriers that could prevent pages from appearing in search results.
+
+**Report:**  
+[View Technical SEO Audit](./seo-audit-report.md#technical-seo-audit)
+
+---
+
+## Tools Used
+
+- Google Lighthouse
+- Chrome DevTools
+- XML Sitemap Validator
+- Robots.txt Tester
